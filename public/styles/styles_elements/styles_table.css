@@ -1,0 +1,23 @@
+.thead .row ul {
+  font-size: 13px;
+  text-transform: uppercase;
+  opacity: 0.5;
+  padding: 1rem 0.5rem;
+  display: grid;
+}
+
+.tbody{
+  overflow: scroll;
+  height: 400px;
+}
+
+.tbody .row ul {
+  font-size: 13px;
+  height: 40px;
+  border-radius: 7px;
+  border: 1px solid #535a6650;
+  display: grid;
+  align-items: center;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}

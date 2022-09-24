@@ -1,0 +1,46 @@
+<div class="main_contect">
+    <main class="main_app">
+        <section>
+            {{>module/header_tabs title='Recursos Humanos' tabs=tabs module=module}}
+        </section>
+
+        <section class="container_form">
+            <section class="section_steps">
+                <ul>
+                    <li class="step active">
+                        <div class="definition">
+                            <h1>Nombre</h1>
+                            <span>Seccción de definición</span>
+                        </div>
+                        <div class="icon">
+                            <span class="las la-tag"></span>
+                        </div>
+                        <div class="indicator">
+                            <span class="circle"></span>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            <section class="section_form">
+                <form action="/api/department/save" method="POST">
+                    <section class="section-department-name">
+                        <div>
+                            <span class="step">Paso 1/1</span>
+                            <h1 class="title">¿Cómo se llamará este departamento?</h1>
+                            <p class="description">Por favor complete el siguiente campo para que se pueda identificar.</p>
+                        </div>
+                        <hr>
+                        <div>
+                            <div>
+                                <label for="name">Nombre del departamento</label>
+                                <input class="input" type="text" id="name" name="name" placeholder="Nombre del departamento">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+
+                    </section>
+                </form>
+            </section>
+        </section>
+    </main>
+</div>

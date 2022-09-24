@@ -1,0 +1,18 @@
+<div class="header_tabs">
+    <h1 class="hidden">{{title_nav}}</h1>
+    <h1 id="title_view" class="title">{{title}}</h1>
+    <div class="container">
+        <div class="tabs">
+            {{#each tabs}}
+            <a href="/api/{{var}}/list" class="tab {{#if  (equal var ../module)}} tab-active {{/if}}">
+                {{title}}
+            </a>
+            {{/each}}
+        </div>
+        <div class="thumbtack">
+            <a href="/api/shortcut/link/{{module}}">
+                <span class="fa-solid fa-thumbtack"></span>
+            </a>
+        </div>
+    </div>
+</div>

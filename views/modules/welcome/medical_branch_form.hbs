@@ -1,0 +1,108 @@
+<div class="backgroundform">
+
+ <div class="welcome_medical_branch_form">
+   <form action="/api/welcome/medical_institution/{{tokenInstitution}}/medical_branch/form/save" method="post">
+   <div class="form">
+    <div class="left">
+      <div class="col1">
+        <div>
+          <label for="name">Nombre de Sucursal</label>
+          <input class="input" id="name" type="text" name="name" />
+        </div>     
+        <div>
+          <label for="province">Provincia</label>
+          <input type="text" id="provinceValue" value="{{person.province}}" hidden>
+          <select class="input" id="province" name="province">
+            <option value="">Seleccione una provincia</option>
+          </select>
+        </div>
+        
+        <div>
+          <label for="canton">Canton</label>
+          <input type="text" id="cantonValue" value="{{person.canton}}" hidden>
+          <select class="input" name="canton" id="canton">
+            <option value=""></option>
+        
+          </select>
+        </div>
+        
+        <div>
+          <label for="parish">Parroquia</label>
+          <input type="text" id="parishValue" value="{{person.parish}}" hidden>
+          <select class="input" name="parish" id="parish">
+            <option value=""></option>
+          </select>
+        </div>
+      </div>
+      <div class="col2">
+        <div>
+          <label for="category">Categoría</label>
+          <select id="category" class="input input_welcome" name="category">
+            <option value="" disabled selected>Selecciona una categoría</option>
+            {{#each branch_categories }}
+            <option value="{{_id}}">{{name}} </option>
+            {{/each}}
+          </select>
+        </div>      
+        <div>
+          <label for="direction">Dirección</label>
+          <input class="input" id="direction" type="text" name="direction" />
+        </div>
+      </div>
+    </div>
+<hr>
+    <div class="rigth">
+      <div class="col1">
+        <div>
+          <label for="identification">Identificación</label>
+        
+          <input class="input" id="identification" type="text" name="identification" />
+        </div>
+        
+        
+        <div>
+          <label for="names">Nombres</label>
+          <input class="input" id="names" type="text" name="names" />
+        </div>
+        
+        <div>
+          <label for="surnames">Apellidos</label>
+        
+          <input class="input" id="surnames" type="text" name="surnames" />
+        </div>
+        
+        <div>
+          <label for="email">Correo electrónico</label>
+          <input class="input" id="email" type="text" name="email" />
+        </div>
+      </div>
+      
+      <div class="col2">
+        <div>
+          <label for="department">Departamento</label>
+          <select class="input" name="department" id="department" disabled>
+            <option value="{{department._id}}">{{department.name}}</option>
+          </select>
+        </div>
+        
+        <div>
+          <label for="position">Cargo</label>
+          <select class="input" name="position" id="position" disabled>
+            <option value="{{position._id}}">{{position.name}}</option>
+          </select>
+        </div>
+        
+        <div>
+          <label for="role">Rol</label>
+          <select class="input" name="role" id="role" disabled>
+            <option value="{{role._id}}">{{role.name}}</option>
+          </select>       
+        </div>
+      </div>
+    </div>
+   </div>
+  
+   <button type="submit" class="btn btn-secondary btn_welcome">Crear</button>
+  </form>
+ </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="main_contect">
+    <main class="main_app">
+    <table>
+        <thead>
+            <tr>
+                <th>N°</th>
+                <th>Institución</th>
+                <th>Tipo</th>
+                <th>Estado</th>
+                <th>Fecha</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each users_business_list}}
+            <tr>
+              
+                <td>{{_id}}</td>
+                <td>{{username}}</td>
+                <td>{{password}}</td>
+                <td>{{email}}</td>
+                <td>{{enable}}</td>
+                <td>{{createdAt}}</td>
+                <td>{{updatedAt}}</td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+
+
+    </main>
+</div>

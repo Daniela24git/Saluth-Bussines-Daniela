@@ -1,0 +1,147 @@
+<<<<<<< HEAD
+{{#if user}}
+<!-- SIDEBAR -->
+=======
+{{#if employee}}
+{{#if (greaterThan medical_institution_user.medical_branches 1)}}
+>>>>>>> 36ad3bfdeb92e151c572284d93dcb162ee492548
+<div id="sidebar" class="sidebar">
+    <div class="sidebar_header">
+        <div class="brand">
+            <div class="logo image_mask">
+                <div class="mask-squircle">
+                    {{#if medical_institution_user.logo}}
+                    <img id="img_logo" src={{medical_institution_user.logo.path}} alt="logo">
+                    {{else}}
+                    <img id="img_logo" src="/img/icons/icon_institution.png" alt="logo">
+                    {{/if}}
+                </div>
+            </div>
+            <div id="title_header_nav" class="title_nav">
+                <span>{{medical_institution_user.name}}</span>
+                <span>Sucursal{{medical_branch_user.name}}</span>
+            </div>
+        </div>
+        <label id="toggle" class=" menu_toggle">
+            <i class="fa-solid fa-angle-left"></i>
+        </label>
+    </div>
+    <div class="sidebar_menu">
+        <ul>
+            <li class="list">
+                <a href="/api/dashboard/home">
+                    <span class="las la-home"></span>
+                    <div id="title_modules_nav">
+                        <span class="title_modules">Home</span>
+                        <span id="point_nav" class="fas fa-circle"></span>
+                    </div>
+                </a>
+                <section class="hint">
+                    <span>Home</span>
+                </section>
+            </li>
+            {{#each modules_category}}
+            <div class="subtitle_nav">
+                <div class="subtitle">
+                    <h2>{{name}}</h2>
+                </div>
+            </div>
+            {{#each ../app_modules}}
+            {{#if category}}
+            {{#if (equal category._id ../_id)}}
+            {{#if (auth ../../employee.user.role.permissions permissions)}}
+            <li class="list">
+                <a href={{url}}>
+                    <span class="las la-{{icon}}"></span>
+                    <div id="title_modules_nav">
+                        <span class="title_modules">{{name}}</span>
+                        <span id="point_nav" class="fas fa-circle"></span>
+                    </div>
+                </a>
+                <section class="hint">
+                    <span>{{name}}</span>
+                </section>
+            </li>
+            {{/if}}{{/if}}
+            {{/if}}
+            {{/each}}
+            {{/each}}
+
+        </ul>
+        <ul>
+            <li class="list">
+                <a href="/api/settings">
+                    <span class="las la-cog"></span>
+                    <div id="title_modules_nav">
+                        <span class="title_modules">Ajustes</span>
+                        <span id="point_nav" class="fas fa-circle"></span>
+                    </div>
+                </a>
+                <section class="hint">
+                    <span>Ajustes</span>
+                </section>
+            </li>
+        </ul>
+    </div>
+
+    <div class="menu_profile visuallyhidden hidden" id="menu_profile">
+        <div id="menu_profile_sidebar_footer" class="sidebar_footer">
+            <h3 class="brand">
+                <div class="avatar">
+                    <div class="mask-squircle">
+                        <img src={{employee.user.avatar.path}} alt="avatar">
+                    </div>
+                </div>
+                <div class="title">
+                    <span>{{employee.person.names}} {{employee.person.surnames}}</span>
+                    <span>{{employee.user.role.name}}</span>
+                </div>
+            </h3>
+        </div>
+        <div id="menu_profile_list" class="menu_profile_list">
+            <ul>
+                <li class="list">
+                    <a href="/api/profile/general">
+                        <span class="las la-user-circle"></span>
+                        <div>
+                            <span class="title_modules">Perfil</span>
+                            <span id="point_nav" class="fas fa-circle"></span>
+                        </div>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="/api/auth/signout">
+                        <span class="las la-sign-out-alt"></span>
+                        <div>
+                            <span class="title_modules">Cerrar Sesión</span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div id="menu_profile_footer" class="footer">
+            <span>Saluth ~ v{{app.version}}</span>
+        </div>
+    </div>
+
+    <div class="sidebar_footer">
+        <h3 class="brand">
+            <div class="avatar">
+                <div class="mask-squircle">
+                    <img id="img_toggle_menu_profile" src={{employee.user.avatar.path}} alt="avatar">
+                </div>
+                <div class="mask-squircle indicator">
+                    <div class="mask-squircle shader"></div>
+                </div>
+            </div>
+            <div class="title" id="title_footer_nav">
+                <span>{{employee.person.names}} {{employee.person.surnames}}</span>
+                <span>{{employee.user.role.name}}</span>
+            </div>
+        </h3>
+        <label id="toggle_menu_profile" class="fa-solid fa-ellipsis-vertical toggle_menu_profile"></label>
+    </div>
+</div>
+
+{{/if}}
+{{/if}}

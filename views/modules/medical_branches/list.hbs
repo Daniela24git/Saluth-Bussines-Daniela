@@ -1,0 +1,73 @@
+<div class="main_contect">
+    <main class="main_app">
+        <section class="headers_module">
+            {{>module/header_tabs title='Sucursales' title_nav='Sucursales' tabs=tabs module='branch'}}
+            {{>module/header_details module='Sucursales' total=total active=active deleted=deleted}}
+            {{>module/header_search module='branch'}}
+        </section>
+
+        <section class="content_module">
+            <div class="table">
+                <div class="thead">
+                    <div class="row">
+                        <ul style="grid-template-columns: repeat(5, 1fr) 30px;">
+                            <li id="columnTable">
+                                ID
+                            </li>
+                            <li id="columnTable">
+                                Nombre Sucursal
+                            </li>
+                            <li id="columnTable">
+                                Direccion
+                            </li>
+                            <li id="columnTable">
+                                Categoría
+                            </li>
+                            <li id="columnTable">
+                                Estado
+                            </li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+                    {{#if (length list)}}
+                <div class="tbody">
+                    {{#each list}}
+                    <div class="row">
+                        <ul style="grid-template-columns: repeat(5, 1fr) 30px;">
+                            <li class="data" id="data" data-column="ID">
+                                {{_id}}
+                            </li>
+                            <li class="data" id="data" data-column="Nombre Sucursal">
+                                {{name}}
+                            </li>
+                            <li class="data" id="data" data-column="Direccion">
+                                {{direction}}
+                            </li>
+                            <li class="data" id="data" data-column="Categoría">
+                                {{category.name}}
+                            </li>
+                            <li id="data">
+                                {{#if enable}}
+                                <span  class="status active data" data-column="Estado">Activo</span>
+                                {{else}}
+                                <span class="status inactive data" data-column="Estado">Inactivo</span>
+                                {{/if}}
+                            </li>
+                            <li>
+                                <span class="fa-solid fa-ellipsis"></span>
+                            </li>
+                        </ul>
+                    </div>
+                    {{/each}}
+                </div>
+                    {{/if}}
+            </div>
+            {{#unless list}}
+            <div class="no_content">
+                <h1>No hay Sucursales</h1>
+            </div>
+            {{/unless}}
+        </section>
+    </main>
+</div>

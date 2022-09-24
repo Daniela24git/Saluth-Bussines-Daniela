@@ -1,0 +1,77 @@
+.from-registre{
+  width: 95%;
+  background: rgb(175, 174, 174);
+  border-radius: 7px;
+}
+
+.from__label, .from__input {
+    display: block;
+}
+
+.from__label{
+    width: 30%;
+    font-size: medium;
+}
+
+.from__input{
+    width: 70%;
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+}
+
+.from__file{
+    font-size: 1em;
+    margin: 10px 0;
+    width: 100%;
+}
+
+.filtro--flex{
+    display:flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.icono{
+    padding-left: 232px;
+}
+
+.btn-enviar{
+  margin-bottom: 20px;
+  padding: 25px;
+  font-size: 16px;
+  border-radius: 3px;
+  margin-left: 170px;
+}
+#filtro{
+  display: none;
+} 
+
+.table-filtro{
+  width: 90%;
+  background: #fff;
+  margin: 10px auto;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-auto-rows: 50px;
+  border:rgb(44, 43, 43) 4px solid;
+}
+
+.table__title{
+  grid-column-start: 1;
+  grid-column-end: 2;
+  background: rgb(122, 122, 122);
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  border: rgb(44, 43, 43) 3px solid;
+}
+
+.table__item{
+  padding: 10px;
+  font-size: 1.2em;
+}
+

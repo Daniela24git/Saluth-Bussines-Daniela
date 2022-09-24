@@ -1,0 +1,146 @@
+.thead1 .row1 ul {
+    font-size: 13px;
+    text-transform: uppercase;
+    opacity: 0.5;
+    padding: 0.5rem 1rem;
+    display: grid;
+    gap: 5px;
+  }
+  
+  .tbody1{
+    overflow: scroll;
+    height: 400px;
+  }
+  
+  .tbody1 .row1 ul {
+    font-size: 13px;
+    height: 50px;
+    border-radius: 7px;
+    border: 1px solid #535a6650;
+    display: grid;
+    align-items: center;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    gap: 5px;
+  }
+
+.grid-container{
+    display: grid;
+    grid-template-columns: 4fr  20px;
+    gap: 10px;
+}
+
+.background-preview {
+  position: fixed;
+  background-color: #535a6650;
+  backdrop-filter: blur(10px);
+  height: 100vh;
+  width: 100%;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-patient {
+    border: solid 1px #535a6650;
+    border-radius: 10px;
+    display: grid;
+    grid-template-rows: 100px 100px 100px ;
+    grid-template-columns: 100px 100px;
+    gap: 5px;
+    padding: 10px;
+    width: 500px;
+    height: 520px;
+    background-color: white;
+    
+}
+.foto{
+    align-items: center;
+    text-align: center;
+    border: #535a6650 1px solid;
+    grid-column-start: 1; 
+    grid-column-end: 5; 
+    grid-row-start: 1; 
+    grid-row-end: 3;
+    padding: 0px 5px;
+    border-radius: 10px;
+  }
+
+.imagen {
+  width: 195px;
+  padding: 5px;
+}
+
+.data-title{
+    color:#00c0ab;
+    font-size: 15px;
+    
+}
+.botones {
+  
+    display: inline-grid;
+    grid-template-columns: auto auto;
+    gap: 5px ;
+
+    
+    
+}
+.vista-previa {
+    background-color: #395d6e;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 8px;
+    box-shadow: 0px 3px 6px rgb(0, 0, 0, 0.15);
+    color: white;
+    width: max-content;
+}
+.archivar {
+    background-color: #d7285f;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 8px;
+    box-shadow: 0px 3px 6px rgb(0, 0, 0, 0.15);
+    color: white;
+    width: max-content;
+}
+.text-btn {
+    color: white;
+}
+.archivar-btn {
+    color: white;
+}
+.vista-previa:hover {
+    cursor: pointer;
+    background-color: #339bb5;
+    
+  }
+  
+.vista-previa:focus {
+    animation: btn-animation 0.2s;
+}
+.archivar:hover {
+    cursor: pointer;
+    background-color: #ff613f;
+    
+  }
+  
+.archivar:focus {
+    animation: btn-animation 0.2s;
+}
+.boton-salir{
+   
+    align-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.data {
+    padding: 10px;
+    border: #00c0ab solid 1px;
+    width: 400px;
+    margin:0px auto;
+    
+}

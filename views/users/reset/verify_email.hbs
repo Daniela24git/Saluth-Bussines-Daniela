@@ -1,0 +1,45 @@
+<div class="background reset">
+  <section id="section_reset" class="section_reset">
+    <div></div>
+    <div id="section_reset_right" class="section_reset_right">
+      <div class="container_right">
+        <div class="part_top">
+          <div class="logo_complet">
+            <img src="/img/logo.svg" alt="" />
+            <h1 class="text_logo"><span>a</span><span>l</span><span>u</span><span>t</span><span>h</span></h1>
+          </div>
+          <h1 class="title_reset">Recupera tu contraseña</h1>
+          <form id="reset_form" action="/api/auth/password_reset/email" method="POST">
+            <div class="credentials_recovery">
+              <p>Ingrese la dirección de correo electrónico de su cuenta de usuario y le enviaremos un enlace para
+                restablecer
+                la contraseña.</p>
+              {{>message}}
+              <div>
+                <input name="email" class="input" id="email" type="text" required autocomplete="off"
+                  placeholder="Ingrese su dirección de correo electrónico" autofocus />
+              </div>
+            </div>
+            <button class="btn btn-primary btn-full" type="submit">Enviar código</button>
+          </form>
+        </div>
+        <div class="part_bottom">
+          <div class="fotter">
+            <p>
+              Al continuar, aceptas las Condiciones del servicio y la Política
+              de privacidad de Saluth.
+            </p>
+            <hr />
+            <h4>¿Ya tienes cuenta?<a id="back_login link" onclick="link('/api/auth/signin')">Inicia Sesión</a></h4>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="hexagon_svg" class="hexagon_svg">
+      <div></div>
+    </div>
+
+  </section>
+</div>

@@ -1,0 +1,51 @@
+<div class="background signin">
+  <section id="section_signin" class="section_signin">
+
+    <div id="section_signin_left" class="section_signin_left">
+      <div class="container_left">
+        <div class="logo_complet">
+          <img src="/img/logo.svg" alt="" />
+          <h1 class="text_logo"><span>a</span><span>l</span><span>u</span><span>t</span><span>h</span></h1>
+        </div>
+        <h1 class="bienvenida">Bienvenido a<span>Saluth<span>{{toCapitalCase app.name}}</span></span></h1>
+        {{>message}}
+        <div class="part_top">
+          <form id="signin_form" action="/api/auth/signin" method="POST">
+            <div class="credentials_login">
+              <div>
+                <label for="username">Usuario</label>
+                <input name="username" class="input" id="username" type="text" required autocomplete="off" autofocus />
+              </div>
+              <div>
+                <label for="password">Contraseña</label>
+                <div class="input-icon">
+                  <span class="fa-solid fa-eye-slash icon hidden" id="eye_slash"></span>
+                  <span class="fa-solid fa-eye icon hidden" id="eye"></span>
+                  <input class="input" id="password" name="password" type="password"
+                    class=" border-0 bg-transparent w-full" required="required">
+                </div>
+                <div class="link-recover">
+                  <a onclick="link('/api/auth/password_reset')">¿Olvidaste tu contraseña?</a>
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-primary btn-full" type="submit">Iniciar Sesión</button>
+          </form>
+        </div>
+        <div class="part_bottom">
+          <div class="fotter">
+            <p>
+              Al continuar, aceptas las Condiciones del servicio y la
+              Política de privacidad de Saluth.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="hexagon_svg" class="hexagon_svg">
+      <div></div>
+    </div>
+
+  </section>
+</div>

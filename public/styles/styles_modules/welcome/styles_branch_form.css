@@ -1,0 +1,30 @@
+.backgroundform {
+    width: 100%;
+    height: calc(100vh - 10px);
+    border-radius: 7px;
+    background-image: radial-gradient(circle at 150% 100%, #cfeaee 0, #ffffff 100%);
+    grid-template-columns: 75% calc(25% - 1.5rem);
+    grid-column-gap: 1.5rem;
+    height: calc(100vh - 10rem);
+  }
+.welcome_medical_branch_form .form{
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+    grid-column-gap: 2rem;
+}
+.welcome_medical_branch_form .form .left{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 2rem;
+}
+.welcome_medical_branch_form .form .rigth{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 2rem;
+}
+.welcome_medical_branch_form .form hr{
+    border:none;
+    border-left: 1px solid #535A6615;
+    height: 100%;
+    width: 1px;
+}

@@ -1,0 +1,39 @@
+<!-- MAIN CONTECT -->
+<div class="main_contect">
+  <main class="main_app">
+    <h2 id="title_view" class="hidden">Home</h2>
+
+    <div class="home_grid">
+
+      <section class="welcome_card">
+        <div class="fondo_welcome_card"></div>
+        <div class="container_welcome">
+          <h3>Hola <span>{{names}},</span></h3>
+          <div>
+            <h1>Bienvenido a Saluth <span>{{toCapitalCase app.name}}</span></h1>
+            <h3 class="phrase">Administra cada paso de tu proyecto.</h3>
+          </div>
+        </div>
+      </section>
+      <section class="home_bootom">
+        <section class="shortcut_grid">
+          {{#each shortcut_list}}
+          <div id="card_shortcut{{_id}}" class="card_shortcut" onclick="window.location='{{url}}'">
+            <div class="title">
+              <span class="{{icon}}"></span>
+              <h3>{{name}}</h3>
+            </div>
+            <a id="btn_unlink" onclick="sidebar_toggle('{{_id}}')" href="/api/shortcut/unlink/{{_id}}">
+              <span class="fa-solid fa-trash"></span>
+            </a>
+          </div>
+          {{/each}}
+          {{#for (calc-shortcut shortcut_list)}}
+          <div class="card_shortcut plus">
+          </div>
+          {{/for}}
+        </section>
+      </section>
+    </div>
+  </main>
+</div>

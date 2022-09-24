@@ -1,0 +1,67 @@
+<div class="backgroundw ">
+    <div class="welcome_elipses">
+        <img src="/img/blobs/elipse.svg" alt="">
+        <img src="/img/blobs/elipse.svg" alt="">
+        <img src="/img/blobs/elipse.svg" alt="">
+        <img src="/img/blobs/elipse.svg" alt="">
+        <img src="/img/blobs/elipse.svg" alt="">
+        <img src="/img/blobs/elipse.svg" alt="">
+        <img src="/img/blobs/elipse.svg" alt="">
+    </div>
+    <div class="container_input">
+        <div class="welcome_message">
+            <h1>
+                Hola , <span>{{employee.person.names}}</span>
+            </h1>
+        </div> 
+        <div class="header">
+            <h1 class="title"> Bienvenido a Saluth Business </h1>
+        </div>
+        <form method="post" action="/api/welcome/medical_institution/{{medical_institution._id}}/update" enctype="multipart/form-data">
+            <label for="inputFile_logo" class="data_img_logo" id="data_img_logo">
+                <div class="container_logo">
+                    <div class="logo image_mask">
+                        <div class="mask-squircle">
+                            {{#if medical_institution.logo}}
+                            <img id="img_logo" src={{medical_institution.logo.path}} alt="logo">
+                            {{else}}
+                            <img id="img_logo" src="/img/icons/icon_institution.png" alt="logo">
+                            {{/if}}
+                        </div>
+                    </div>
+                    <div class="text">
+                        <h6 id="error_logo" class="error_logo"><span class="fas fa-triangle-exclamation"></span>
+                            <p id="error_logo_text">Error</p>
+                        </h6>
+                    </div>
+                    <input id="inputFile_logo" type="file" name="image" hidden>
+                </div>
+            </label>
+            <h2 class="icontitle"> Agrega tu logo </h2>
+            <div>
+                <div>
+                    <div>
+                        <label for="ruc">R.U.C</label>
+                        <input id="ruc" class="input input_welcome " type="text" name="ruc" value="{{medical_institution.ruc}}" disabled>
+                    </div>                   
+                    <div>
+                        <label for="name">Nombre de la Institutción Médica</label>
+                        <input id="name" class="input input_welcome " type="text" name="name" value="{{medical_institution.name}}">
+                    </div>                   
+                    <div>
+                        <label for="type">Tipo de Institución Médica</label>
+                        <select id="type" class="input input_welcome" name="type">
+                            <option class="" value="">Tipo de Institución Médica</option>
+                            {{#each types }}
+                            <option value="{{_id}}" {{#if (equal _id ../medical_institution.type)}} selected {{/if}}>{{name}} </option>
+                            {{/each}}
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+            <p class="footer">Desde este momento tu Institución Médica crecerá en la <span>nube</span> </p>
+            <button type="submit" class="btn btn-secondary btn_welcome">Continuar</button>
+        </form>
+    </div>
+</div>

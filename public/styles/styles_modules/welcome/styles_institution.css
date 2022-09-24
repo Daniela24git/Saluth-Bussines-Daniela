@@ -1,0 +1,146 @@
+.backgroundw {
+    width: 100%;
+    height: calc(100vh - 10px);
+    border-radius: 7px;
+    background-image: radial-gradient(circle at 150% 100%, #cfeaee 0, #ffffff 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .welcome_message{
+    position: absolute;
+    top: -20px;
+    left: -225px;
+    font-size: 7px;
+    z-index: 2;
+  }
+  .welcome_message h1{
+    font-weight: 400;
+  }
+  .welcome_message span{
+    color: var(--s);
+    
+  }
+.container_input{
+    position: relative;
+    width: 450px;
+    text-align: center;
+    z-index: 2;       
+}
+.container_input label{
+  display: block;
+
+
+}
+.container_input form > div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align:left; 
+}
+.container_input form > div > div{
+  width: 80% !important;
+}
+.container_input .header{
+  text-align: center;
+}
+
+.container_logo .logo{
+  width: 70px;
+  margin: auto;
+}
+
+.container_input .footer{
+  margin: 25px 0;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+}
+.container_input .footer span{
+  font-weight: bold;
+  color: var(--s);
+}
+.container_input .title{
+  font-size: 29px;
+  margin-bottom: 20px;
+  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  color: rgb(102, 102, 102);
+  
+}
+.container_input .icon{
+  color: rgb(150, 150, 150);  
+  font-size: 60px;
+}
+.icontitle{
+  font-weight: 400;
+  margin-bottom: 35px;
+  font-size: small;
+  font-family: "Poppins", sans-serif;
+  color: rgb(104, 104, 104);
+}
+.input_welcome{
+  padding: 11px 7px !important;
+}
+.btn_welcome{
+  width: 60% !important;
+  margin: auto;
+}
+
+.welcome_elipses{
+  width: 100%;
+  height: 100vh;
+  top:0;
+  left:0;
+  z-index: 1;
+  position: absolute;
+}
+.welcome_elipses img{
+  position: absolute;
+}
+.welcome_elipses img:nth-child(1){
+  top: 10px;
+  left: 50px;
+  width: 50px;
+  height: 50px;
+}
+.welcome_elipses img:nth-child(2){
+  top: 50px;
+  left: 400px;
+  width: 15px;
+  height: 15px;
+}
+.welcome_elipses img:nth-child(3){
+  top: 150px;
+  right:150px;
+  width: 15px;
+  height: 15px;
+  
+}
+.welcome_elipses img:nth-child(4){
+  top:425px;
+  right:360px;
+  width: 23px;
+  height: 23px;
+  
+}
+.welcome_elipses img:nth-child(5){
+  top:650px;
+  right:100px;
+  width: 45px;
+  height: 45px;
+  
+}
+.welcome_elipses img:nth-child(6){
+  top: 700px;
+  right:740px;
+  width: 35px;
+  height: 35px;
+  
+}
+.welcome_elipses img:nth-child(7){
+  top: 800px;
+  left: 200px;
+  width: 13px;
+  height: 13px;
+}

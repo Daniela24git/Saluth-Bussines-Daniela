@@ -1,0 +1,96 @@
+<div class="main_contect">
+    <main class="main_app">
+        <section>
+            {{>module/header_tabs title='Recursos Humanos' tabs=tabs module=module}}
+        </section>
+
+        <section class="container_form">
+            <section class="section_steps">
+                <ul>
+                    <li class="step active">
+                        <div class="definition">
+                            <h1>Nombre</h1>
+                            <span>Seccción de definición</span>
+                        </div>
+                        <div class="icon">
+                            <span class="las la-tag"></span>
+                        </div>
+                        <div class="indicator">
+                            <span class="circle"></span>
+                        </div>
+                    </li>
+                    <li class="step">
+                        <div class="definition">
+                            <h1>Permisos</h1>
+                            <span>Seccción de permisos</span>
+                        </div>
+                        <div class="icon">
+                            <span class="fa-solid fa-clone"></span>
+                        </div>
+                        <div class="indicator">
+                            <span class="circle"></span>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            <section class="section_form">
+                <form action="/api/area/save" method="POST">
+                    <section class="section-area-name">
+                        <div>
+                            <span class="step">Paso 1/2</span>
+                            <h1 class="title">Inicia con el nombre del rol empresarial.</h1>
+                            <p class="description">Por favor complete el siguiente campo para que pueda identificar este
+                                rol con facilidad.</p>
+                        </div>
+                        <hr>
+                        <div>
+                            <div>
+                                <label for="name">Nombre del rol</label>
+                                <input class="input" type="text" id="name" name="name" placeholder="Nombre del área">
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary">Siguiente</button>
+
+                    </section>
+                    <section class="section-area-departaments">
+                        <div>
+                            <span class="step">Paso 2/2</span>
+                            <h1 class="title">Seleccione los permisos que pertenecen a este rol.</h1>
+                            <p class="description">Por favor seleccione los pertenecen que pertenecen a este rol.
+                            </p>
+                        </div>
+                        <hr>
+                        <div>
+                            <div>
+                                <label for="permissions">Permisos</label>
+                                <select class="input" id="permissions" name="permissions">
+                                    <option value="">Seleccione un permiso</option>
+                                    {{#each permissions_list}}
+                                    <option value="{{_id}}">{{name}}</option>
+                                    {{/each}}
+                                </select>
+                            </div>
+                            <div>
+                                <a href="form"><span class="fa-solid fa-plus"></span></a>
+                            </div>
+                        </div>
+                        <div>
+                            {{#each permissions}}
+                            <div>
+                                <div>
+                                    <span>{{name}}</span>
+                                </div>
+                                <div>
+                                    <span class="fa-solid fa-times"></span>
+                                </div>
+                            </div>
+                            {{/each}}
+                        </div>
+                        <button type="button" class="btn btn-primary">Atras</button>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </section>
+                </form>
+            </section>
+        </section>
+    </main>
+</div>

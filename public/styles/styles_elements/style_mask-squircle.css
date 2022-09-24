@@ -1,0 +1,29 @@
+.image_mask {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image_mask > div {
+  display: block;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+
+.image_mask .mask-squircle {
+  mask-image: url("../../img/mask-squircle.svg");
+  -webkit-mask-image: url("../../img/mask-squircle.svg");
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+
+.image_mask img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}

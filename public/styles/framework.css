@@ -1,0 +1,64 @@
+.hidden {
+  display: none;
+}
+
+.opacity-0{
+  opacity: 0;
+}
+
+.px-10 {
+  padding-left: 2.5rem; /* 40px */
+  padding-right: 2.5rem; /* 40px */
+}
+
+.resize-none {
+  resize: none;
+}
+
+.resize-y {
+  resize: vertical;
+}
+
+.resize-x {
+  resize: horizontal;
+}
+
+.resize {
+  resize: both;
+}
+
+.border-0	{
+  border: 0;
+}
+
+.bg-gray {
+  background-color: #535a6610;
+}
+
+.bg-transparent{
+  background-color: transparent;
+}
+
+.shadow-none {
+  box-shadow: none;
+}
+
+.border-1 {
+  border: 1px solid #535a6650;
+}
+
+.w-400 {
+  width: 400px;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.font-normal{
+  font-weight: 400;
+}
+
+.font-extralight{
+  font-weight: 200;
+}

@@ -1,0 +1,116 @@
+<div class="main_contect">
+    <main class="main_app">
+        <section>
+            {{>module/header_tabs title='Sucursales' title_nav='Sucursales' tabs=tabs module='branch'}}
+        </section>
+
+        <section>
+            <section>
+                <div>
+                    <div>
+                        <h1>Nombre Sucursal</h1>
+                        <span>Descripción Nombre</span>
+                    </div>
+                    <div>
+                        <div>
+                            <span class="icono lapiz"></span> 
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div>
+                        <h1>Direccion</h1>
+                        <span>Descripcion Direccion</span>
+                    </div>
+                    <div>
+                        <div>
+                            <span class="fa-solid fa-clone"></span>
+                        </div>
+                    </div>
+                </div>
+
+                 <div>
+                    <div>
+                        <h1>Categoría</h1>
+                        <span>Descripcion categoría</span>
+                    </div>
+                    <div>
+                        <div>
+                            <span class="fa-solid fa-clone"></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <form action="update/{{item._id}}" method="POST">
+
+                    <section class="section-branch-name">
+                        <div>
+                            <span>Paso 1/3</span>
+                            <h1>Inicia con tu Sucursal</h1>
+                            <span>Ejemplo: Más Sucursales</span>
+                            <p>Por favor complete el siguiente campo para que pueda identificar su sucursal.
+                            </p>
+                        </div>
+                        <hr>
+                        <div>
+                            <div>
+                                <label for="name">Nombre de la sucursal </label>
+                                <input type="text" id="name" name="name" placeholder="Nombre de la Sucursal" value="{{item.name}}">
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary">Siguiente</button>
+
+                    </section>
+
+
+
+                    <section class="section-area-departaments">
+                        <div>
+                            <span>Paso 2/3</span>
+                            <h1>Direccion</h1>
+                            <span>Ejemplo: Norte  o Sur </span>
+                            <p>Ingrese la ubicación exacta de su sucursal.</p>
+                        </div>
+                        <hr>
+                        <div>
+                            <div>
+                                <label for="direction">Departamentos</label>
+                                <input type="text" id="direction" name="direction" placeholder="Dirección de la Sucursal" value="{{item.direction}}">
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn-primary">Atras</button>
+                        <button type="button" class="btn btn-primary">Siguiente</button>
+                    </section>
+
+                    <section class="section-area-departaments">
+                        <div>
+                            <span>Paso 3/3</span>
+                            <h1>Categoría</h1>
+                            <span>Ejemplo: Hospital, clinica o farmacia</span>
+                            <p>Seleccione su categoría.</p>
+                        </div>
+                        <hr>
+                        <div>
+                            <div>
+                                <label for="category">Categorías</label>
+                                <select name="category" id="category">
+                                     <option value="">Seleccione una categoría</option>
+                                    {{#each branch_categories_list}}
+                                    <option value="{{_id}}" {{#if (equal _id ../item.category)}} selected {{/if}}>{{name}}</option>
+                                    {{/each}} 
+                                </select>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn-primary">Atras</button>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </section>
+                </form>
+            </section>
+        </section>
+    </main>
+</div>

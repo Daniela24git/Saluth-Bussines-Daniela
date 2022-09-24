@@ -1,0 +1,85 @@
+<div class="main_contect">
+    <main class="main_app">
+        <section>
+            {{>module/header_tabs title='Recursos Humanos' tabs=tabs module=module}}
+        </section>
+
+        <section class="container_form">
+            <section>
+                <div>
+                    <div>
+                        <h1>Jornada Laboral</h1>
+                        <span>Definición de horario</span>
+                    </div>
+                    <div>
+                        <div>
+                            <span class="fa-solid fa-tag"></span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <h1>Almuerzo</h1>
+                        <span>Definición de hora de almuerzo</span>
+                    </div>
+                    <div>
+                        <div>
+                            <span class="fa-solid fa-clone"></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <form action="/api/schedule/save" method="POST">
+                    <section class="section-area-name">
+                        <div>
+                            <span>Paso 1/2</span>
+                            <h1>Inicia con el nombre del cargo.</h1>
+                            <span>Ejemplo: Gerente, Supervisor, Asesor</span>
+                            <p>Por favor complete el siguiente campo con el nombre del cargo.</p>
+                            </p>
+                        </div>
+                        <hr>
+                        <div>
+                            <div>
+                                <label for="time_start">Hora de entrada</label>
+                                <input type="time" id="time_start" name="time_start" placeholder="Hora de entrada">
+                            </div>
+                            <div>
+                                <label for="time_end">Hora de salida</label>
+                                <input type="time" id="time_end" name="time_end" placeholder="Hora de salida">
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary">Siguiente</button>
+
+                    </section>
+                    <section class="section-area-departaments">
+                        <div>
+                            <span>Paso 2/2</span>
+                            <h1>Asigne un salario para este cargo</h1>
+                            <span>Ejemplo: 500, 1000, 2000</span>
+                            <p>Por favor complete el siguiente campo con el salario correspondiente</p>
+                        </div>
+                        <hr>
+                        <div>
+                            <div>
+                                <label for="time_lunch_duration">Tiempo de almuerzo</label>
+                                <input type="text" id="time_lunch_duration" name="time_lunch_duration" placeholder="Tiempo de almuerzo">
+                            </div>
+                            <div>
+                                <label for="time_lunch">Hora de almuerzo</label>
+                                <input type="time" id="time_lunch" name="time_lunch" placeholder="Hora de almuerzo">
+                            </div>
+                            <div>
+                                <label for="time_lunch_end">Fin de almuerzo</label>
+                                <input type="time" id="time_lunch_end" name="time_lunch_end" placeholder="Fin de almuerzo">
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary">Atras</button>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </section>
+                </form>
+            </section>
+        </section>
+    </main>
+</div>

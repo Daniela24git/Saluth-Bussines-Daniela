@@ -1,0 +1,50 @@
+<div class="background reset">
+  <section id="section_reset" class="section_reset">
+    <div></div>
+    <div id="section_reset_right" class="section_reset_right">
+      <div class="container_right">
+        <div class="part_top">
+          <div class="logo_complet">
+            <img src="/img/logo.svg" alt="" />
+            <h1 class="text_logo"><span>a</span><span>l</span><span>u</span><span>t</span><span>h</span></h1>
+          </div>
+          <div>
+            <h1>Restablecer su contraseña</h1>
+            <div>
+              <p>Revise su correo electrónico para obtener un enlace para restablecer su contraseña, si no aparece en
+                unos
+                minutos, revisa tu carpeta de correo no deseado.</p>
+              {{>message}}
+              <h3>
+                <span class="timeLeft" id="timeLeft">{{formatTime (formatDateNumber time)}}</span>
+
+                Despues de 5 minutos de haber sido enviado el ultimo correo, puede reenviar el correo.
+              </h3>
+              <form action="/api/auth/password_reset/email/{{token}}" method="POST">
+                <button class="btn btn-primary btn-full" type="submit">Reenviar correo</button>
+              </form>
+              <button class="btn btn-primary btn-full" onclick="window.location='/api/auth'">Volver a iniciar
+                sesión</button>
+            </div>
+          </div>
+        </div>
+        <div class="part_bottom">
+          <div class="fotter">
+            <p>
+              Al continuar, aceptas las Condiciones del servicio y la Política
+              de privacidad de Saluth.
+            </p>
+            <hr />
+            <h4>¿Ya tienes cuenta?<a id="back_login link" onclick="link('/api/auth/signin')">Inicia Sesión</a></h4>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="hexagon_svg" class="hexagon_svg">
+      <div></div>
+    </div>
+
+  </section>
+</div>

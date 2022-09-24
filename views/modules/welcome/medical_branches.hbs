@@ -1,0 +1,11 @@
+<div>
+    <h1>Medical Branches</h1>
+
+        {{#each medical_branches}}
+    <div onclick="/api/welcome/medical_institution/medical_branch/{{_id}}">
+            <h3>{{name}}</h3>
+        
+    </div> 
+    {{/each}}
+
+</div>

@@ -1,0 +1,17 @@
+.header_details {
+  padding: 1rem;
+  border-bottom: 1px solid #535a6650;
+}
+
+.header_details .container {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  padding: .5rem 0;
+}
+
+.header_details .container div {
+  padding-right: 3rem;
+  
+}
+

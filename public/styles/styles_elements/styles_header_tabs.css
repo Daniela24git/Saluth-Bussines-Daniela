@@ -1,0 +1,92 @@
+:root {
+  --p: 259 94% 51%;
+  --rounded-btn: 0.5rem;
+  --animation-input: 0.2s;
+  --btn-text-case: uppercase;
+  --btn-focus-scale: 0.95;
+  --border-btn: 1px;
+  --tab-border: 1px;
+  --tab-radius: 0.5rem;
+  --pc: 0 0% 100%;
+  --s: 314 100% 47%;
+  --sc: 0 0% 100%;
+  --a: 174 60% 51%;
+  --ac: 175 44% 15%;
+  --n: 219 14% 28%;
+  --nc: 0 0% 100%;
+  --b1: 0 0% 100%;
+  --b2: 0 0% 95%;
+  --b3: 180 2% 90%;
+  --bc: 215 28% 17%;
+}
+
+.header_tabs{
+  padding: 1rem;
+  border-bottom: 1px solid #535a6650;
+}
+
+.header_tabs .title{
+  font-size: 20px;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+.header_tabs .container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.header_tabs .container .tabs {
+  display: flex;
+  border: solid 1px #535a6650;
+  align-items: center;
+  padding: 3px;
+  border-radius: 7px;
+}
+.header_tabs .container .tabs .tab {
+  position: relative;
+  display: inline-flex;
+  cursor: pointer;
+  -webkit-user-select: none;
+  user-select: none;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 2rem;
+  font-size: 13px;
+  line-height: 1.25rem;
+  line-height: 2;
+  --tab-padding: 1rem;
+  --tw-text-opacity: 0.5;
+  --tab-color: hsla(var(--bc) / var(--tw-text-opacity, 1));
+  --tab-bg: hsla(var(--b1) / var(--tw-bg-opacity, 1));
+  --tab-border-color: hsla(var(--b3) / var(--tw-bg-opacity, 1));
+  color: var(--tab-color);
+  padding-left: var(--tab-padding, 1rem);
+  padding-right: var(--tab-padding, 1rem);
+}
+
+.header_tabs .container .tabs .tab:hover {
+  --tw-text-opacity: 1;
+}
+
+.header_tabs .container .tabs .tab.tab-active {
+  --tw-bg-opacity: 1;
+  background-color: var(--p);
+  --tw-text-opacity: 1;
+  color: white;
+  border-radius: 7px;
+  cursor: default;
+   pointer-events:none;
+}
+
+.header_tabs .container .thumbtack{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 7px;
+  border: solid 1px #535a6650;
+}

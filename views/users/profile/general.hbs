@@ -1,0 +1,135 @@
+<!-- MAIN CONTECT -->
+<div class="main_contect">
+  <main class="main_app">
+    <section>
+      <h2 id="title_view" class="hidden">Perfil</h2>
+      <h2 id="title_view_profile" class=" hidden">General</h2>
+    </section>
+
+    <div class="profile_grid">
+      <section class="profile_edit">
+        {{>profile/navegation}}
+        <div class="profile_settings">
+          <form action="/api/profile/update/person/{{person._id}}" method="POST" enctype="multipart/form-data">
+            <section class="section_form_profile">
+              <div class="title_section_form">
+                <h5>Foto de perfil:</h5>
+              </div>
+              <label for="inputFile_avatar" class="data_img_avatar" id="data_img_avatar">
+                <div class="container_avatar">
+                  <div class="avatar">
+                    <div class="mask-squircle">
+                      <img id="img_avatar" src={{doer.user.avatar.path}} alt="avatar">
+                    </div>
+                  </div>
+                  <div class="icon_edit_avatar">
+                    <div class="avatar">
+                      <div class="mask-squircle">
+                        <span class="fas fa-camera"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="text">
+                  <h6>Suelte su archivo aquí o seleccione una imagen</h6>
+                  <p>Solo se permiten formatos: <span>JPEG</span>, <span>JPG</span> y <span>PNG</span>.</p>
+                  <h6 id="error_avatar" class="error_avatar"><span class="fas fa-triangle-exclamation"></span>
+                    <p id="error_avatar_text">Error</p>
+                  </h6>
+                </div>
+                <div class="text_drag">
+                  <h6>Suelta la imagen para subir...</h6>
+                </div>
+                <input id="inputFile_avatar" type="file" name="image" hidden>
+              </label>
+
+            </section>
+            <section class="section_form_profile">
+              <div class="title_section_form">
+                <h5>Datos Personales:</h5>
+              </div>
+              <div class="container_inputs">
+                <div class="data_cedula_persona">
+                  <label for="identification">Cédula</label>
+                  <input name="identification" class="input" id="identification" type="text" autocomplete="off" required
+                    value="{{person.identification}}" />
+                </div>
+                <div class="data_nombres_persona">
+                  <label for="names">Nombres</label>
+                  <input name="names" class="input" id="names" type="text" autocomplete="off" required
+                    value="{{person.names}}" />
+                </div>
+                <div class="data_apellidos_persona">
+                  <label for="surnames">Apellidos</label>
+                  <input name="surnames" class="input" id="surnames" type="text" autocomplete="off" required
+                    value="{{person.surnames}}" />
+                </div>
+                <div class="data_fecha_nacimiento_persona">
+                  <label for="birthday">Fecha Nacimiento</label>
+                  <input name="birthday" class="input" id="birthday" type="date" autocomplete="off" required
+                    value="{{formatDate person.birthday}}" />
+                </div>
+                <div class="data_tel_persona">
+                  <label for="phone">Telefono</label>
+                  <input name="phone" class="input" id="phone" type="tel" autocomplete="off" required
+                    value="{{person.phone}}" />
+                </div>
+              </div>
+            </section>
+
+            <section class="section_form_profile">
+              <div class="title_section_form">
+                <h5>Dirección:</h5>
+              </div>
+              <div class="container_inputs">
+                <div class="data_direccion_persona">
+                  <label for="direction">Direccion</label>
+                  <input name="direction" class="input" id="direction" type="text" autocomplete="off" required
+                    value="{{person.direction}}" />
+                </div>
+                <div class="data_provincia">
+                  <label for="province">Provincia</label>
+                  <input type="text" id="provinceValue" value="{{person.province}}"hidden>
+                  <select class="input" id="province" name="province">
+                    <option value="">Seleccione una provincia</option>
+                  </select>
+
+                </div>
+                <div class="data_canton">
+                  <label for="canton">Canton</label>
+                  <input type="text" id="cantonValue" value="{{person.canton}}"hidden>
+                  <select class="input" name="canton" id="canton">
+                    <option value=""></option>
+                   
+                  </select>
+                </div>
+                <div class="data_parroquia">
+                  <label for="parish">Parroquia</label>
+                  <input type="text" id="parishValue" value="{{person.parish}}"hidden>
+                  <select class="input" name="parish" id="parish">
+                    <option value=""></option>
+                    {{!-- {{#each parishes}}
+                    <option value="{{_id}} 
+                    {{#if person.parish}}
+                        {{#if (equal _id person.parish)}}
+                        selected
+                        {{/if}}{{/if}}">{{toCapitalCase name}}</option>
+                    {{/each}} --}}
+                  </select>
+                </div>
+              </div>
+            </section>
+            <div class="buttons_form_profile">
+              <button class="btn btn-secondary disabled" id="button_general" type="submit">
+                <div>
+                  <span class="fa-solid fa-floppy-disk"></span> Actualizar
+                </div>
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+      {{>profile/preview_profile}}
+    </div>
+  </main>
+</div>

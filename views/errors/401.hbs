@@ -1,0 +1,20 @@
+<!-- MAIN CONTECT -->
+<div class="main_contect {{#unless user}}width_full{{/unless}}">
+    <main class="main_app">
+        <h2 id="title_view" class="hidden">Error 404</h2>
+        <div class="error_404_grid ">
+            <div class="animation_404">
+
+            </div>
+            <div class="info_404">
+                <div>
+                    <h1>401</h1>
+                    <h2>¡UH OH! No estas autorizado.</h2>
+                    <p>{{error_401_msg}} <br>Para acceder puedes solicitar permisos a un administrador.
+                    </p>
+                    <button onclick="window.location='/'" class="btn">Home</button>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>

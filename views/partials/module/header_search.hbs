@@ -1,0 +1,53 @@
+<div class="header_search">
+    <div class="container">
+        <div class="input-group bg-gray border-0 w-400">
+            <span class="fa-solid fa-magnifying-glass"></span>
+            <input type="search" id="search" class="search_input border-0 bg-transparent w-full" placeholder="Buscar"
+                required="required">
+        </div>
+        <div>
+            <button id="abrir" class="btn btn-outline" onclick="mostrarFiltro()"><span class="fa-solid fa-filter"></span> Filtro</button>
+            <form id="filtro" action="/api/filter/save" method="post" class="from-registre">
+                <a href="javascript:void(0);" onclick="ocultarFiltro();" class="icono"><span class="lar la-times-circle"></span></a>
+                <div id="from"class="filtro--flex">
+                    <label for="column" class="from__label">Columna</label>
+                    {{!-- <input id="column" type="text" name="column" placeholder="Flitre por su nombre" class="from__input"
+                        required> --}}
+                        <select name="column" id="selectColumns" class="from__input">
+                            <option value="" disabled selected></option>
+                        </select>
+                </div>
+                <div id="from" class="filtro--flex">
+                    <label for="valueFilter" class="from__label">Valor</label>
+                    <input id="valueFilter" type="value" name="value" placeholder="Flitre por su nombre" class="from__input"
+                        required="required">
+                </div>
+                <div>
+                    <button id="abrir" class="btn btn-outline from__file">
+                        <span class="fa-solid fa-plus"></span> Add
+                    </button>
+                </div>
+            </form>
+                <div class="table-filtro">
+                    {{#each employee.user.settings.filters}}
+                    <div id="filter">
+                        <div class="table__title" id="columnFilter">
+                            {{column}}  
+                        </div>
+                        <div id="valueFilter" class="table__item">
+                            {{value}}
+                        </div>
+                    </div>
+                    <div>
+                        <button id="delete" class="btn btn-outline from__file" onclick="window.location='/api/filter/delete/{{_id}}'">
+                            <span class="fa-solid fa-plus"></span>
+                        </button>
+                    </div>
+                    {{/each}}
+                </div>
+        </div>
+        <button class="btn btn-primary" onclick="window.location='/api/{{module}}/form'"><span
+                class="fa-solid fa-plus"></span> Nuevo
+        </button>
+    </div>
+</div>

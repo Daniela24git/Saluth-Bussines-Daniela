@@ -1,0 +1,27 @@
+{{#if signin_msg}}
+<div class="message success">
+    <div>
+        <h1>{{signin_msg}}</h1>
+    </div>
+</div>
+{{/if}}
+
+{{#if success_msg}}
+<div class="message success">
+    <div>
+        <i class="fa-solid fa-circle-check"></i>
+        <h1>Éxito: {{success_msg}}</h1>
+    </div>
+    <i class="fa-solid fa-xmark"></i>
+</div>
+{{/if}}
+
+{{#if error_msg}}
+<div class="message error">
+    <div>
+        <i class="fa-solid fa-circle-exclamation"></i>
+        <h1>{{error_msg}}</h1>
+    </div>
+    <i class="fa-solid fa-xmark"></i>
+</div>
+{{/if}}

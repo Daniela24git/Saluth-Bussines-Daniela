@@ -1,0 +1,79 @@
+<div class="main_contect">
+    <main class="main_app">
+        <section class="headers_module">
+            {{>module/header_tabs title='Recursos Humanos' tabs=tabs module=module}}
+            {{>module/header_details total=total active=active deleted=deleted}}
+            {{>module/header_search module='schedule'}}
+        </section>
+
+        <section class="content_module">
+            <div class="table">
+                <div class="thead">
+                    <div class="row">
+                        <ul style="grid-template-columns: repeat(6, 1fr) 30px;">
+                            <li>
+                                ID
+                            </li>
+                            <li>
+                                Hora Ingreso
+                            </li>
+                            <li>
+                                Hora Salida
+                            </li>
+                            <li>
+                                Hora Almuerzo
+                            </li>
+                            <li>
+                                Duración Almuerzo
+                            </li>
+                            <li>
+                                Estado
+                            </li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+                    {{#if (length list)}}
+                <div class="tbody">
+                    {{#each list}}
+                    <div class="row">
+                        <ul style="grid-template-columns: repeat(6, 1fr) 30px;">
+                            <li>
+                                {{_id}}
+                            </li>
+                            <li>
+                                {{time_start}}
+                            </li>
+                            <li>
+                                {{time_end}}
+                            </li>
+                            <li>
+                                {{time_lunch}}
+                            </li>
+                            <li>
+                                {{time_lunch_duration}}
+                            </li>
+                            <li>
+                                {{#if enable}}
+                                <span class="status active">Activo</span>
+                                {{else}}
+                                <span class="status inactive">Inactivo</span>
+                                {{/if}}
+                            </li>
+                            <li>
+                                <span class="fa-solid fa-ellipsis"></span>
+                            </li>
+                        </ul>
+                    </div>
+                    {{/each}}
+                </div>
+                    {{/if}}
+            </div>
+            {{#unless list}}
+            <div class="no_content">
+                <h1>No hay {{toLowerCase module.name}}</h1>
+            </div>
+            {{/unless}}
+        </section>
+    </main>
+</div>

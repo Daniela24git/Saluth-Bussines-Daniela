@@ -1,0 +1,73 @@
+<div class="main_contect">
+    <main class="main_app">
+        <section>
+            {{>module/header_tabs title='Recursos Humanos' tabs=tabs module=module}}
+        </section>
+
+        <section class="container_form">
+            <section>
+                <div>
+                    <div>
+                        <h1>Nombre</h1>
+                        <span>Seccción de definición</span>
+                    </div>
+                    <div>
+                        <div>
+                            <span class="fa-solid fa-tag"></span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <h1>Departamentos</h1>
+                        <span>Seccción de distribución</span>
+                    </div>
+                    <div>
+                        <div>
+                            <span class="fa-solid fa-clone"></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <form action="/api/position/save" method="POST">
+                    <section class="section-area-name">
+                        <div>
+                            <span>Paso 1/2</span>
+                            <h1>Inicia con el nombre del cargo.</h1>
+                            <span>Ejemplo: Gerente, Supervisor, Asesor</span>
+                            <p>Por favor complete el siguiente campo con el nombre del cargo.</p>
+                            </p>
+                        </div>
+                        <hr>
+                        <div>
+                            <div>
+                                <label for="name">Nombre del cargo</label>
+                                <input type="text" id="name" name="name" placeholder="Nombre del cargo">
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary">Siguiente</button>
+
+                    </section>
+                    <section class="section-area-departaments">
+                        <div>
+                            <span>Paso 2/2</span>
+                            <h1>Asigne un salario para este cargo</h1>
+                            <span>Ejemplo: 500, 1000, 2000</span>
+                            <p>Por favor complete el siguiente campo con el salario correspondiente</p>
+                        </div>
+                        <hr>
+                        <div>
+                            <div>
+                                <label for="salary">Sueldo</label>
+                                <input type="text" id="salary" name="salary" placeholder="Sueldo asignado">
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-primary">Atras</button>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </section>
+                </form>
+            </section>
+        </section>
+    </main>
+</div>

@@ -1,0 +1,26 @@
+<div class="container_welcome">
+  <div class="container_welcome_branch" >
+    <section class="left">
+      <img class="img_parent_branch" src="/img/welcome/institution.svg" alt="" />
+      <div class="details_branch">
+        <p>{{medical_branch.name}}</p>  
+        <p>{{medical_branch.category.name}}</p>
+        <p>{{medical_branch.direction}}</p>
+      </div>
+    </section>
+    <section class="right">
+      <div class="header_branch">
+          <span>Bienvenido a tu</span>
+          <h1>Panel de sucursales</h1>
+          <p> Visualiza los datos de tu matriz y si deseas crear una sucursal da clic en agregar sucursal</p>
+      </div>
+      <div class="link_form_branch">
+          <a href="/api/welcome/medical_institution/{{tokenInstitution}}/medical_branch/form/new">Agregar sucursal</a>
+  
+      </div>
+      <div class="img_arrow">
+          <img src="/img/welcome/arrow.svg" alt="">
+      </div>
+    </section>
+  </div>
+</div>

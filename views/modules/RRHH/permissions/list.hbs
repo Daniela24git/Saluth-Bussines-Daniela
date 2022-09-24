@@ -1,0 +1,61 @@
+<div class="main_contect">
+    <main class="main_app">
+        <section class="headers_module">
+            {{>module/header_tabs title='Recursos Humanos' tabs=tabs module=module}}
+            {{>module/header_details total=total active=active deleted=deleted}}
+            {{>module/header_search module='area'}}
+        </section>
+
+        <section class="content_module">
+            <div class="table">
+                {{#if (length list)}}
+                <div class="thead">
+                    <div class="row">
+                        <ul style="grid-template-columns: repeat(3, 1fr) 30px;">
+                            <li>
+                                ID
+                            </li>
+                            <li>
+                                Nombre
+                            </li>
+                            <li>
+                                Estado
+                            </li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="tbody">
+                    {{#each list}}
+                    <div class="row">
+                        <ul style="grid-template-columns: repeat(3, 1fr) 30px;">
+                            <li>
+                                {{_id}}
+                            </li>
+                            <li>
+                                {{name}}
+                            </li>
+                            <li>
+                                {{#if enable}}
+                                <span class="status active">Activo</span>
+                                {{else}}
+                                <span class="status inactive">Inactivo</span>
+                                {{/if}}
+                            </li>
+                            <li>
+                                <span class="fa-solid fa-ellipsis"></span>
+                            </li>
+                        </ul>
+                    </div>
+                    {{/each}}
+                </div>
+                {{/if}}
+            </div>
+            {{#unless list}}
+            <div class="no_content">
+                <h1><span class="fa-solid fa-ban"></span> No hay {{toLowerCase module.name}}</h1>
+            </div>
+            {{/unless}}
+        </section>
+    </main>
+</div>

@@ -1,0 +1,113 @@
+<div class="main_contect">
+    <main class="main_app">
+        <section class="headers_module">
+            {{>components/module/header_tabs title='Pacientes' tabs=tabs module='patient'}}
+            {{>components/module/header_details module='Pacientes' total=total active=active deleted=deleted}}
+            {{>components/module/header_search module='patient'}}
+        </section>
+
+        <section class="content_module grid-container">
+            <div class="table">
+                <div class="thead1">
+                    <div class="row1">
+                        <ul style="grid-template-columns: 2fr repeat(5, 1fr) 20px;">
+                            <li>
+                                ID
+                            </li>
+                            <li>
+                                Perfil
+                            </li>
+                            <li>
+                                Nombre
+                            </li>
+                            <li>
+                                Cedula
+                            </li>
+                            <li>
+                                Estado
+                            </li>
+                            <li>
+                                Opciones
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                    {{#if (length list)}}
+                <div class="tbody1">
+                    {{#each list}}
+                    <div class="row1" onclick="window.location = '/api/patient/list/{{_id}}'">
+                        <ul style="grid-template-columns: 2fr repeat(5, 1fr)  25px;">
+                            <li>
+                                {{_id}}
+                            </li>
+                            <li>
+                                {{user.avatar}} 
+                            </li>
+                            <li>
+                                {{person.names}} <br> {{person.surnames}}
+                            </li>
+                            <li>
+                                {{person.identification}}
+                            </li>
+                            <li>
+                                {{#if enable}}
+                                <span class="status active">Activo</span>
+                                {{else}}
+                                <span class="status inactive">Inactivo</span>
+                                {{/if}}
+                            </li>
+                            <li>
+                                <div class="botones">
+                                    <button href="#" id="show-img" onclick="show();" class="vista-previa">
+                                        <span class="text-btn"><i class="fa-solid fa-eye text-btn"></i> Vista Previa
+                                        </span>
+                                    </button>
+                                    <button href="#" id="show-img" onclick="show();" class="archivar">
+                                        <span class="archivar-btn"><i class="fa-solid fa-folder-closed text-btn"></i> Archivar
+                                        </span>
+                                    </button>
+                                </div>
+                            </li>
+                            
+                        </ul>
+                       
+                    </div>
+                    {{/each}}
+                </div>
+                    {{/if}}
+            </div>
+            
+
+            {{#unless list}}
+            <div class="no_content">
+                <h1>No hay pacientes</h1>
+            </div>
+            {{/unless}}
+        </section>
+    </main>
+</div>
+
+            {{#if item}}
+            <div class="background-preview">
+                <div id="img"  class="profile-patient">
+                    <div class="foto">
+                        <img src="/img/patient/User-profile.png" alt="" class="imagen">
+                    </div>
+                    <div>
+                    <h2 class="data-title">Datos del paciente</h2>
+                    <ul class="data">
+                        <li> <b>Cédula:</b>{{item.person.identification}}</li>
+                        <li> <b>Nombres: </b>  {{item.person.names}}</li>
+                        <li> <b>Apellidos: </b>{{item.person.surnames}}</li>
+                        <li> <b>Fecha de Nacimiento: </b> {{item.person.direction}}</li>
+                        <li> <b></b> Estado Cívil:{{item.person.identification}}</li>
+                        <li> <b></b> Edad:{{calculateAge item.person.birthday}}</li>
+                    <div class="boton-salir">
+
+                        <button id="salir" class="vista-previa salir" onclick = "window.location = '/api/patient/list'">Salir</button>
+                    </div>
+                    </ul>
+                    </div>
+                </div>
+            </div>
+            {{/if}}

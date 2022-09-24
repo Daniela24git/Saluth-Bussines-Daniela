@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="686.402" height="677.597" viewBox="0 0 686.402 677.597">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: 100;
+        fill: url(#radial-gradient);
+      }
+
+      .cls-2 {
+        filter: url(#blob);
+      }
+    </style>
+    <radialGradient id="radial-gradient" cx="0.606" cy="0.101" r="0.628" gradientTransform="translate(0 -0.003) scale(1 1.043)" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#cfeaee"/>
+      <stop offset="0.385" stop-color="#99abb3"/>
+      <stop offset="1" stop-color="#535a66"/>
+    </radialGradient>
+    <filter id="blob" x="0" y="0" width="686.402" height="677.597" filterUnits="userSpaceOnUse">
+      <feOffset dx="3" dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g class="cls-2" transform="matrix(1, 0, 0, 1, 0, 0)">
+    <path id="blob-2" data-name="blob" class="cls-1" d="M429.754,5.638C480.4,42.89,531.627,69.8,553.811,112.49c22.6,42.694,15.906,100.439,0,149.411s-40.784,89.026-63.387,131.3S448.2,480.57,413.455,513.637c-34.322,33.067-83.311,54.621-127.679,47.087-44.368-7.953-84.088-45.159-121.34-76.97-37.252-31.392-72.163-58.041-118.624-92.363C-.649,356.65-58.222,314.435-79.15,259.185c-20.51-54.832-4.1-121.617,34.41-169.333,38.927-47.716,99.8-76.5,157.561-109.568C171-52.365,226.211-89.937,278.531-84.915,330.434-79.473,379.526-31.614,429.754,5.638Z" transform="translate(100.04 97.37)"/>
+  </g>
+</svg>

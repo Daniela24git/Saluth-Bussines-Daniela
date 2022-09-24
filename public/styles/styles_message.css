@@ -1,0 +1,48 @@
+.message {
+  width: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  border-radius: 7px;
+  padding: 12px 20px;
+  position: fixed;
+  bottom: 20px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  box-shadow: 3px 3px 10px #00000029;
+}
+
+.message div {
+  display: flex;
+  align-items: center;
+}
+
+.message div i{
+    font-size: 20px;
+  margin-right: 10px;
+}
+
+.message h1 {
+  font-size: 12px;
+  font-weight: normal;
+  color: white;
+}
+
+.message i {
+  font-size: 20px;
+  color: white;
+}
+
+.message i.fa-xmark {
+    opacity: 50%;
+}
+
+.message.success {
+  background-color: #00bc8c;
+}
+
+.message.error {
+  background-color: #e84c3d;
+}
